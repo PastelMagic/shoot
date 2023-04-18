@@ -1,5 +1,6 @@
 A = 0
 B = 0
+X = 0
 
 def on_forever():
     global A, B
@@ -19,16 +20,9 @@ def on_forever2():
                         # . . . #
         """)
         basic.show_leds("""
-            # . . . #
-                        . # . # .
-                        . . . . .
-                        . # . # .
-                        # . . . #
-        """)
-        basic.show_leds("""
             . . . . .
                         . # . # .
-                        . . # . .
+                        . . . . .
                         . # . # .
                         . . . . .
         """)
@@ -36,6 +30,13 @@ def on_forever2():
             . . . . .
                         . . . . .
                         . . # . .
+                        . . . . .
+                        . . . . .
+        """)
+        basic.show_leds("""
+            . . . . .
+                        . . . . .
+                        . . . . .
                         . . . . .
                         . . . . .
         """)
@@ -46,5 +47,15 @@ def on_forever3():
     global B
     if B == 1:
         music.play_melody("C5 B A G F E D C ", 1000)
+        music.play_melody("C5 B A G F E D C ", 1000)
         B = 0
 basic.forever(on_forever3)
+
+def on_forever4():
+    global X
+    if input.acceleration(Dimension.X) < 0:
+        X += -1
+    else:
+        X += 1
+        led.plot(X, 0)
+basic.forever(on_forever4)

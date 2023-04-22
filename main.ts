@@ -48,6 +48,12 @@ basic.forever(function () {
         music.playMelody("C5 B A G F E D C ", 1000)
         B = 0
     }
+    if (B == 2) {
+        for (let カウンター = 0; カウンター <= 4; カウンター++) {
+            music.playMelody("C D E F G A B C5 ", 3000)
+            B = 0
+        }
+    }
 })
 basic.forever(function () {
     led.unplot(X, Y)
@@ -73,13 +79,7 @@ basic.forever(function () {
     led.plot(X, Y)
     if (A == 2) {
         if (X == 2 && Y == 2) {
-            basic.showLeds(`
-                . . . . .
-                . . . . .
-                . . # . .
-                . . . . .
-                . . . . .
-                `)
+            B = 2
             basic.showLeds(`
                 . . . . .
                 . # # # .

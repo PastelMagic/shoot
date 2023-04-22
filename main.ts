@@ -1,7 +1,7 @@
-let B = 0
-let A = 0
 let X = 0
 let Y = 0
+let A = 0
+let B = 0
 basic.forever(function () {
     if (A == 0 && B == 0) {
         if (input.buttonIsPressed(Button.A)) {
@@ -40,7 +40,7 @@ basic.forever(function () {
             . . . . .
             . . . . .
             `)
-        A = 0
+        A = 2
     }
 })
 basic.forever(function () {
@@ -71,5 +71,38 @@ basic.forever(function () {
     }
     basic.pause(100)
     led.plot(X, Y)
+    if (A == 2) {
+        if (X == 2 && Y == 2) {
+            basic.showLeds(`
+                . . . . .
+                . . . . .
+                . . # . .
+                . . . . .
+                . . . . .
+                `)
+            basic.showLeds(`
+                . . . . .
+                . # # # .
+                . # . # .
+                . # # # .
+                . . . . .
+                `)
+            basic.showLeds(`
+                # . # . #
+                . . . . .
+                # . . . #
+                . . . . .
+                # . # . #
+                `)
+            basic.showLeds(`
+                . . . . .
+                . . . . .
+                . . . . .
+                . . . . .
+                . . . . .
+                `)
+        }
+        A = 0
+    }
     basic.pause(100)
 })

@@ -47,8 +47,7 @@ basic.forever(function () {
     if (B == 1) {
         music.playMelody("C5 B A G F E D C ", 1000)
         B = 0
-    }
-    if (B == 2) {
+    } else if (B == 2) {
         for (let カウンター = 0; カウンター <= 4; カウンター++) {
             music.playMelody("C D E F G A B C5 ", 3000)
             B = 0
